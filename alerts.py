@@ -100,7 +100,7 @@ def evaluate_level(rule: dict, series: list[tuple[date, float]]) -> list[tuple[d
         if fired:
             label = f"level {direction} {level:g}"
             alerts.append(
-                (curr_date, f"{curr_date}        {rule_id}    {instrument}     {label}")
+                (curr_date, f"{curr_date}   {rule_id:<4} {instrument:<6} {label}")
             )
             break   # level rule fires only on the *first* crossing
 
@@ -153,7 +153,7 @@ def evaluate_ma_cross(rule: dict, series: list[tuple[date, float]]) -> list[tupl
         if fired:
             label = f"ma_cross {short_w}/{long_w} {direction}"
             alerts.append(
-                (curr_date, f"{curr_date}        {rule_id}    {instrument}     {label}")
+                (curr_date, f"{curr_date}   {rule_id:<4} {instrument:<6} {label}")
             )
 
     return alerts
